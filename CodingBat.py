@@ -1,3 +1,179 @@
+#List-2 begins:
+def has22(nums):
+  for i in range(len(nums)-1):
+    if nums[i] ==2 and nums[i+1:i+2] == [2]:
+      return True
+      
+  return False
+def sum67(nums):
+  sum = 0 
+  flag = False
+  for i in nums:
+    if i ==6:
+      flag = True
+    elif i == 7 and flag == True:
+      flag  = False
+    elif flag == False:
+      sum += i
+  return sum
+def sum13(nums):
+  
+  sum = 0
+  if len(nums)>0 and nums[0] !=13:
+    sum += nums[0]
+  for i in range(1,len(nums)):
+    if nums[i]!=13 and nums[i-1] !=13:
+      sum += nums[i]
+  return sum
+def centered_average(nums):
+  maxi = nums[0]
+  mini = nums[0]
+  sum = 0
+  for i in range(len(nums)):
+    maxi = max(nums[i],maxi)
+    mini = min(nums[i],mini)
+  for i in range(len(nums)):
+    sum += nums[i]
+      
+  return (sum - (mini+maxi))//(len(nums)-2)    
+def big_diff(nums):
+  maxi = nums[0]
+  mini = nums[0]
+  for i in range(len(nums)):
+    maxi = max(nums[i],maxi)
+    mini = min(nums[i],mini)
+  return maxi - mini
+def count_evens(nums):
+  count = 0
+  for i in nums:
+    if i%2 == 0:
+      count +=1
+  return count
+#String-2 begins:
+def xyz_there(str):
+  for i in range(0,len(str)):
+    if str[i:i+3] == "xyz" and str[i-1:i] != ".":
+      return True
+  return False  
+def end_other(a, b):
+  if a.lower().endswith(b.lower()) or b.lower().endswith(a.lower()):
+    return True
+  else:
+    return False
+
+def count_code(str):
+  count = 0
+  for i in range(len(str)):
+    if str[i:i+2]+str[i+3:i+4] == "coe":
+      count+=1
+  return count
+def cat_dog(str):
+  countCat = 0
+  countDog = 0
+  for i in range(len(str)):
+    if str[i:i+3]== "cat":
+      countCat += 1
+    elif str[i:i+3]== "dog":
+      countDog += 1
+  return countCat == countDog
+def count_hi(str):
+  count = 0
+  for i in range(len(str)):
+    if str[i:i+2]== "hi":
+      count+=1
+  return count    
+
+def double_char(str):
+  nStr = ""
+  for i in str:
+    nStr += i*2
+  return nStr
+#Logic-1 begins: 
+def near_ten(num):
+  if num % 10 <= 2 or num % 10 >= 8:
+    return True
+  else:
+    return False
+
+def in1to10(n, outside_mode):
+  if outside_mode == True:
+    if n <=1 or n >= 10:
+      return True
+    else:
+      return False
+      
+  elif outside_mode == False and n>=1 and n<=10:
+      return True
+  else:
+      return False
+def love6(a, b):
+  if a == 6 or b == 6:
+    return True
+  elif a+b == 6 or abs(a-b) == 6:
+    return True
+  else:
+    return False
+
+def alarm_clock(day, vacation):
+  if vacation == True:
+    if day == 0 or day == 6:
+      return "off"
+    else:
+      return "10:00"
+  else:
+    if day == 0 or day == 6:
+      return "10:00"
+    else:
+      return "7:00"
+def sorta_sum(a, b):
+  if a+b >=10 and a+b <= 19:
+    return 20
+  else:
+    return a + b
+def caught_speeding(speed, is_birthday):
+  if is_birthday == True:
+    if speed <=65:
+      return 0
+    if speed >=65 and speed <=85:
+      return 1
+    if speed >=86:
+      return 2
+  else:
+    if speed <=60:
+      return 0
+    if speed >=61 and speed <=80:
+      return 1
+    if speed >=81:
+      return 2
+    
+
+def squirrel_play(temp, is_summer):
+  if (is_summer == False and (temp >=60 and temp <= 90)) or (is_summer == True and (temp >=60 and temp <= 100)):
+    return True
+  else:
+    return False
+    
+
+def date_fashion(you, date):
+  if you <= 2 or date <= 2:  
+    return 0
+  if you >= 8 or date >= 8:
+    return 2
+  else:
+    return 1
+def cigar_party(cigars, is_weekend):
+  if (is_weekend == True and cigars>=40) or (is_weekend == False and (cigars>=40 and cigars <=60)):
+    return True
+  else:
+    return False
+
+#List-1 begins:
+def has23(nums):
+  if 2 in nums or 3 in nums:
+    return True
+  else:
+    return False
+
 def make_ends(nums):
   if len(nums) < 2:
     return [nums[0],nums[0]]

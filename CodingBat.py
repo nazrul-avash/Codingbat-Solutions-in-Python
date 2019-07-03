@@ -1,3 +1,77 @@
+#Logic-2 begins:
+def make_chocolate(small, big, goal):
+  res = goal // 5
+  if res >= big and (goal - big*5) <= small:
+    return goal - big*5
+  elif res < big and goal%5 <= small:
+    return  goal%5
+  else:
+    return -1
+    
+
+def close_far(a, b, c):
+  if abs(b -a ) <= 1:
+    if abs(c-a) >=2 and abs(c-b) >= 2:
+      return True
+  elif abs(c -a) <= 1:    
+    if abs(b-a) >=2 and abs(c-b) >= 2:
+      return True
+  return False    
+def round10(num):
+  if num%10 <5:
+    return num - num%10
+  else:
+    return num + (10 - num%10)
+def round_sum(a, b, c):
+  sum = 0
+  for i in [a,b,c]:
+    
+    sum += round10(i)
+  return sum  
+
+def fix_teen(n):
+  if n>= 13 and n<=19 and n!= 15 and n!= 16:
+    return True
+  else:
+    return False
+def no_teen_sum(a, b, c):
+  sum = 0
+  for i in [a,b,c]:
+    if fix_teen(i) == False:
+      sum += i
+      
+  return sum
+def lucky_sum(a, b, c):
+ 
+  
+  if a == 13:
+    return 0
+  elif b == 13:
+    return a
+  elif c ==13:
+    return a+b
+  else:
+    return a+b+c
+def lone_sum(a, b, c):
+  sum = 0
+  if a != b and a!=c:
+    sum += a
+  if a != b and b != c:
+    sum += b
+  if c != b and c != a:
+    sum +=c
+  return sum  
+
+def make_bricks(small, big, goal):
+  res = goal//5
+  
+  
+  if res >= big and (goal - big*5) <= small:
+    return True
+  elif res <= big and goal%5 <= small:
+    return True
+  else:
+    return False
 #List-2 begins:
 def has22(nums):
   for i in range(len(nums)-1):
